@@ -3,14 +3,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
+import { setSmoother } from "./utils/smootherInstance";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-export let smoother: ScrollSmoother;
 
 const Navbar = () => {
   useEffect(() => {
-    smoother = ScrollSmoother.create({
+    const instance = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
       smooth: 1.7,
@@ -19,9 +19,10 @@ const Navbar = () => {
       autoResize: true,
       ignoreMobileResize: true,
     });
+    setSmoother(instance);
 
-    smoother.scrollTop(0);
-    smoother.paused(true);
+    instance.scrollTop(0);
+    instance.paused(true);
 
     let links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
@@ -31,26 +32,32 @@ const Navbar = () => {
           e.preventDefault();
           let elem = e.currentTarget as HTMLAnchorElement;
           let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
+          instance.scrollTo(section, true, "top top");
         }
       });
     });
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       ScrollSmoother.refresh(true);
-    });
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      instance.kill();
+    };
   }, []);
   return (
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          Logo
+          DUSHYANT
         </a>
         <a
-          href="mailto:example@mail.com"
+          href="mailto:dushyantyadav5024@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
         >
-          example@mail.com
+          dushyantyadav5024@gmail.com
         </a>
         <ul>
           <li>
