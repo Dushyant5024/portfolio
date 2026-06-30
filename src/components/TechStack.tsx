@@ -15,20 +15,31 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
   "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
   "/images/mysql.webp",
   "/images/typescript.webp",
   "/images/javascript.webp",
+  "/images/python.png",
+  "/images/docker.webp",
+  "/images/fastapi.webp",
+  "/images/Flask.png",
+  "/images/git.webp",
+  "/images/Google Cloud.png",
+  "/images/Hugging Face.png",
+  "/images/LangChain.png",
+  "/images/PHP.webp",
+  "/images/PyTorch.png",
+  "/images/Scikit-learn.jpg",
+  "/images/SQL.webp",
+  "/images/Streamlit.png",
 ];
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
-const spheres = [...Array(30)].map(() => ({
-  scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
+const scales = [0.7, 1, 0.8, 1, 1];
+const spheres = [...Array(36)].map((_, i) => ({
+  scale: scales[i % scales.length],
+  materialIndex: i % imageUrls.length,
 }));
 
 type SphereProps = {
@@ -193,11 +204,11 @@ const TechStack = () => {
         <directionalLight position={[0, 5, -4]} intensity={2} />
         <Physics gravity={[0, 0, 0]}>
           <Pointer isActive={isActive} />
-          {spheres.map((props, i) => (
+          {spheres.map(({ scale, materialIndex }, i) => (
             <SphereGeo
               key={i}
-              {...props}
-              material={materials[Math.floor(Math.random() * materials.length)]}
+              scale={scale}
+              material={materials[materialIndex]}
               isActive={isActive}
             />
           ))}

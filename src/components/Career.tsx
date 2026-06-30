@@ -15,43 +15,37 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>LLM Post-Training Intern</h4>
+                <h5>Ethara AI</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>2026</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Fine-tuned LLMs using SFT and preference-based training techniques to improve response quality. Engineered automated evaluation pipelines using quantitative metrics and benchmarking methodologies for systematic model assessment.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Full Stack Developer</h4>
+                <h5>ISKCON Gwalior, M.P</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>2024-25</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Developed a scalable PHP/MySQL platform serving 3,000+ users and processing 100,000+ secure transactions. Reduced redundant backend computations by 35% through query optimization and caching.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Machine Learning Intern</h4>
+                <h5>LearNex</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>2024</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Built scalable ML pipelines processing 50K+ records using Scikit-learn, statistical validation, and performance benchmarking. Evaluated machine learning models achieving strong predictive performance.
             </p>
           </div>
         </div>

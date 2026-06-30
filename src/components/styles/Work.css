@@ -12,6 +12,9 @@
   box-sizing: border-box;
   will-change: transform;
   overflow: hidden;
+  background-color: var(--backgroundColor);
+  position: relative;
+  z-index: 1;
 }
 .work-container {
   margin: auto;
@@ -207,5 +210,25 @@
   }
   .work-flex {
     height: auto;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  .work-section {
+    height: auto;
+    overflow: visible;
+  }
+  .work-flex::before,
+  .work-flex::after {
+    display: none;
+  }
+  .work-box {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #363636;
+    padding: 40px 0;
+  }
+  .work-flex .work-box:nth-child(even) {
+    flex-direction: column;
   }
 }

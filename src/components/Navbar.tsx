@@ -21,6 +21,10 @@ const Navbar = () => {
     });
     setSmoother(instance);
 
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
+
     instance.scrollTop(0);
     instance.paused(true);
 
